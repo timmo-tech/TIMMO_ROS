@@ -1,0 +1,29 @@
+<!-- -*- mode: XML -*- -->
+<!-- rostest of reading timmo 64E PCAP files -->
+
+<launch>
+
+  <!-- start read with example PCAP file -->
+  <node pkg="timmo_driver" type="timmo_node" name="timmo_node">
+    <param name="pcap" value="$(find timmo_driver)/tests/class.pcap"/>
+  </node>
+
+  <test test-name="pcap_node_hertz_test" pkg="rostest"
+        type="hztest" name="hztest_packets_node_64e" >
+    <param name="hz" value="10.0" />
+    <param name="hzerror" value="3.0" />
+    <param name="test_duration" value="5.0" />    
+    <param name="topic" value="timmo_packets" />  
+    <param name="wait_time" value="2.0" />  
+  </test>
+
+  <test test-name="node_diagnostics_test"
+        pkg="rostest" type="hztest" name="hztest_diag_node_64e">
+    <param name="hz" value="1.0" />
+    <param name="hzerror" value="0.5" />
+    <param name="test_duration" value="5.0" />    
+    <param name="topic" value="diagnostics" />  
+    <param name="wait_time" value="2.0" />  
+  </test>
+
+</launch>

@@ -1,0 +1,9 @@
+<library path="lib/libtimmo_driver_nodelet">
+  <class name="timmo_driver/DriverNodelet"
+         type="timmo_driver::DriverNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description> 
+      Publish raw timmo data packets.
+    </description>
+  </class>
+</library>

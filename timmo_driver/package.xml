@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>timmo_driver</name>
+  <version>1.5.2</version>
+  <description>
+    ROS device driver for timmo 3D LIDARs.
+  </description>
+  <maintainer email="josh.whitley@autoware.org">Josh Whitley</maintainer>
+  <maintainer email="brice.rebsamen@gmail.com">Brice Rebsamen</maintainer>
+  <author>Jack O'Quin</author>
+  <author>Patrick Beeson</author>
+  <author>Michael Quinlan</author>
+  <author>Yaxin Liu </author>
+  <license>BSD</license>
+
+  <url type="website">http://www.ros.org/wiki/timmo_driver</url>
+  <url type="repository">https://github.com/ros-drivers/timmo</url>
+  <url type="bugtracker">https://github.com/ros-drivers/timmo/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslint</build_depend>
+
+  <depend>diagnostic_updater</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>libpcap</depend>
+  <depend>nodelet</depend>
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <depend>timmo_msgs</depend>
+
+  <test_depend>roslaunch</test_depend>
+  <test_depend>rostest</test_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/nodelet_timmo.xml"/>
+  </export>
+</package>

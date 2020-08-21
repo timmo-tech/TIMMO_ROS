@@ -1,0 +1,17 @@
+## Diagnostic aggregator parameters for testing timmo diagnostics.
+#
+#  $ rosparam load $(rospack find timmo_driver)/tests/diagnostic_agg.yaml
+#  $ rosrun diagnostic_aggregator aggregator_node
+#
+diagnostic_aggregator:
+  analyzers:
+    sensors:
+      type: diagnostic_aggregator/AnalyzerGroup
+      path: Sensors
+      analyzers:
+        timmo:
+          type: diagnostic_aggregator/GenericAnalyzer
+          path: timmo HDL
+          timeout: 5.0
+          find_and_remove_prefix: timmo_nodelet_manager
+          num_items: 1
