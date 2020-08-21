@@ -1,0 +1,14 @@
+<!-- -*- mode: XML -*- -->
+<!-- run timmo_laserscan/LaserScanNodelet in a nodelet manager -->
+
+<launch>
+  <arg name="manager" default="timmo_nodelet_manager" />
+  <arg name="ring" default="-1" />
+  <arg name="resolution" default="0.007" />
+
+  <node pkg="nodelet" type="nodelet" name="$(arg manager)_laserscan"
+        args="load timmo_laserscan/LaserScanNodelet $(arg manager)">
+    <param name="ring" value="$(arg ring)"/>
+    <param name="resolution" value="$(arg resolution)"/>
+  </node>
+</launch>
